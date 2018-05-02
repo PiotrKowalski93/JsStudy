@@ -20,4 +20,6 @@ var Module = function() {
     }
 }
 
+// When exporting with () we execute the function
+// Nodejs will cache it and automatically we will have singleton
 module.exports = Module();

@@ -1,16 +1,3 @@
-// Constructor Pattern
-// 1. New returns 'this'
-// 2. Binds 'this' to new object scope
-// 3. Creates new object
-
-function Car(data) {
-    this.name = data.name;
-    this.cost = data.cost;
-
-    this.toString = function () {
-        return this.cost + " " + this.name;
-    }
-}
 
 // var firstCar = new Car("Honda", 55000);
 // console.log(firstCar.toString());
@@ -32,4 +19,4 @@ var car2 = new Car2("Opel", 12000);
 // console.log(car.toString());
 // console.log(car2.toString());
 
-module.exports = Car;
+// module.exports = Car;

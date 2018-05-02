@@ -3,16 +3,16 @@
 // 2. Binds 'this' to new object scope
 // 3. Creates new object
 
-function Car(name, cost) {
-    this.name = name;
-    this.cost = cost;
+function Car(data) {
+    this.name = data.name;
+    this.cost = data.cost;
 
     this.toString = function () {
         return this.cost + " " + this.name;
     }
 }
 
-var firstCar = new Car("Honda", 55000);
+// var firstCar = new Car("Honda", 55000);
 // console.log(firstCar.toString());
 
 // Prototypes

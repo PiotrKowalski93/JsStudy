@@ -47,16 +47,29 @@ var myTask = new Task('Legacy Task');
 
 // Decorator Pattern
 // we can use call(this) to bind object
-var urgenTask = new Task('Urgen Task');
 
-urgenTask.notify = function() {
-    console.log('Notify Func');
+var UrgentTask = function (name, priority) {
+    Task.call(this, name);
+    this.priority = priority;
+    
+    this.notify = function() {
+        console.log('Notify Func');
+    }
 }
 
-urgenTask.complete();
-urgenTask.save = function() {
-    this.notify();
+UrgentTask.prototype = Object.create(Task.prototype);
+var urgenTask = new UrgentTask('Urgen Task', 1);
+
+UrgentTask.prototype.save = function() {
+    console.log('Additional stuff!');
     Task.prototype.save.call(this);
 }
 
+// urgenTask.notify = function() {
+//     console.log('Notify Func');
+// }
+
+urgenTask.notify();
+urgenTask.complete();
 urgenTask.save();
+console.log(urgenTask);

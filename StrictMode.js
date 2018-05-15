@@ -11,3 +11,21 @@ var func = function() {
 }
 
 console.log(x);
+
+var obj = {
+    value: 'Hi there',
+    printVal: function(){
+        console.log(this.value);
+    }
+}
+
+var obj2 = {
+    value: "What's up",
+}
+
+var print = obj.printVal;
+print();
+
+obj2.printVal = obj.printVal;
+obj2.printVal();
+

@@ -33,3 +33,10 @@ obj2.printVal = obj.printVal;
 // binding scope of obj2 to print2
 var print2 = obj.printVal.bind(obj2)
 print2()
+
+var obj3 = function() {
+    // This is a good practice to be sure that we
+    // are operating on a good scope
+    var _this = this;
+}
+

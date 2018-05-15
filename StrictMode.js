@@ -2,7 +2,7 @@
 // What is Strict Mode? = "JS is trying to help you, don't let it"
 // Without strict mode JS will try to do thing for you
 // sometimes you dont want to.
-// 'use strict';
+'use strict';
 var x = 23;
 
 var func = function() {
@@ -23,9 +23,13 @@ var obj2 = {
     value: "What's up",
 }
 
+// This will not work with strict mode
 var print = obj.printVal;
-print();
+// print();
 
 obj2.printVal = obj.printVal;
-obj2.printVal();
+// obj2.printVal();
 
+// binding scope of obj2 to print2
+var print2 = obj.printVal.bind(obj2)
+print2()
